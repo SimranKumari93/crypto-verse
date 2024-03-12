@@ -7,7 +7,6 @@ import { MoneyCollectOutlined, DollarCircleOutlined, FundOutlined, StopOutlined,
 TrophyOutlined , CheckOutlined , NumberOutlined, ThunderboltOutlined, ExclamationCircleOutlined} 
 from '@ant-design/icons'
 import LineChart from './LineChart'
-// import LineChart from '../services/LineChart'
 import { useGetCryptoDetailsQuery ,useGetCryptoHistoryQuery } from '../services/cryptoApi'
 import Loader from './Loader'
 

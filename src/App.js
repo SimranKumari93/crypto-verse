@@ -1,9 +1,16 @@
 import React from 'react';
-import {  Route, Link } from 'react-router-dom';
-import { Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+// import {BrowserRouter,  Route , Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import { Layout, Typography, Space } from 'antd';
-import { Exchanges, Homepage, News, Cryptocurrencies, CryptoDetails, Navbar } from './components';
+import Homepage from './components/Homepage';
+import Navbar from './components/Navbar';
+import Exchanges from './components/Exchanges';
+import News from './components/News';
+import CryptoDetails from './components/CryptoDetails';
+import Cryptocurrencies from './components/Cryptocurrencies';
+// import { Exchanges, Homepage, News, Cryptocurrencies, CryptoDetails, Navbar } from './components';
 import './App.css';
 
 const App = () => (
@@ -14,23 +21,20 @@ const App = () => (
     <div className="main">
       <Layout>
         <div className="routes">
-          <Switch>
-            <Route exact path="/">
-              <Homepage />
-            </Route>
-            <Route exact path="/exchanges">
-              <Exchanges />
-            </Route>
-            <Route exact path="/cryptocurrencies">
-              <Cryptocurrencies />
-            </Route>
-            <Route exact path="/crypto/:coinId">
-              <CryptoDetails />
-            </Route>
-            <Route exact path="/news">
-              <News />
-            </Route>
-          </Switch>
+          <Router>
+          <Routes>
+          <Route exact path="/" element={<Homepage/>} />
+            <Route path="/exchanges" element={<Exchanges/>} />
+            <Route path="/cryptocurrencies" element={<Cryptocurrencies/>}/>
+            <Route path="/crypto/:coinId" element={<CryptoDetails/>}/>
+            <Route path="/news" element={<News/>}/> 
+            {/* <Route exact path="/"> <Homepage/></Route>
+            <Route path="/exchanges" ><Exchanges/></Route>
+            <Route exact path="/cryptocurrencies" ><Cryptocurrencies/></Route>
+            <Route exact path="/crypto/:coinId"><CryptoDetails/></Route>
+            <Route exact path="/news" ><News/></Route>          */}
+          </Routes>
+          </Router>
         </div>
       </Layout>
       <div className="footer">
