@@ -6,9 +6,11 @@ import { useGetCryptosQuery } from '../services/cryptoApi'
 import Cryptocurrencies from './Cryptocurrencies'
 import Loader from './Loader'
 import News from './News'
+
 const { Title } = Typography 
+
 const Homepage = () => {
-  const [ data , isFetching ] = useGetCryptosQuery(10);
+  const { data , isFetching } = useGetCryptosQuery(10);
   const globalStats = data?.data?.stats;
   console.log(data);
 
