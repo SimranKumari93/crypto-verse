@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import {BrowserRouter,  Route , Routes } from 'react-router-dom';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 import { Layout, Typography, Space } from 'antd';
 import Homepage from './components/Homepage';
@@ -21,24 +20,17 @@ const App = () => (
     <div className="main">
       <Layout>
         <div className="routes">
-          <Router>
           <Routes>
-          <Route exact path="/" element={<Homepage/>} />
-            <Route path="/exchanges" element={<Exchanges/>} />
-            <Route path="/cryptocurrencies" element={<Cryptocurrencies/>}/>
-            <Route path="/crypto/:coinId" element={<CryptoDetails/>}/>
-            <Route path="/news" element={<News/>}/> 
-            {/* <Route exact path="/"> <Homepage/></Route>
-            <Route path="/exchanges" ><Exchanges/></Route>
-            <Route exact path="/cryptocurrencies" ><Cryptocurrencies/></Route>
-            <Route exact path="/crypto/:coinId"><CryptoDetails/></Route>
-            <Route exact path="/news" ><News/></Route>          */}
+              <Route exact path="/" element={<Homepage/>} />
+              <Route path="/exchanges" element={<Exchanges/>} />
+              <Route path="/cryptocurrencies" element={<Cryptocurrencies/>}/>
+              <Route path="/crypto/:coinId" element={<CryptoDetails/>}/>
+              <Route path="/news" element={<News/>}/> 
           </Routes>
-          </Router>
         </div>
       </Layout>
       <div className="footer">
-        <Typography.Title level={5} style={{ color: 'white', textAlign: 'center' }}>Copyright © 2021
+        <Typography.Title level={5} style={{ color: 'white', textAlign: 'center' }}>Copyright © 2024
           <Link to="/">
             Cryptoverse Inc.
           </Link> <br />
